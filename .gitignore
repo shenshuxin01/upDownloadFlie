@@ -32,3 +32,6 @@ build/
 ### VS Code ###
 .vscode/
 /.idea/
+/updownloadfile/.mvn/wrapper/maven-wrapper.properties
+/updownloadfile/mvnw
+/updownloadfile/mvnw.cmd
