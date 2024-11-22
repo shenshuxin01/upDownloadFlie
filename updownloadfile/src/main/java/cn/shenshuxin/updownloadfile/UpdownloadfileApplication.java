@@ -3,12 +3,17 @@ package cn.shenshuxin.updownloadfile;
 import cn.shenshuxin.updownloadfile.config.SsxStartupStep;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.core.metrics.ApplicationStartup;
 
 @SpringBootApplication
-public class UpdownloadfileApplication {
-
+public class UpdownloadfileApplication  extends SpringBootServletInitializer {
+	@Override
+	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
+		return application.sources(UpdownloadfileApplication.class);
+	}
 	public static void main(String[] args) {
 //		ConfigurableApplicationContext run = SpringApplication.run(UpdownloadfileApplication.class, args);
 //		ApplicationStartup applicationStartup = run.getApplicationStartup();
