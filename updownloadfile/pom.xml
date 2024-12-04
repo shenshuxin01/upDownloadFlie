@@ -22,7 +22,7 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
-			<!-- 排除内置的tomcat -->
+			<!-- 当是war包部署方式 排除内置的tomcat -->
 			<exclusions>
 				<exclusion>
 					<artifactId>org.springframework.boot</artifactId>
@@ -34,7 +34,7 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-tomcat</artifactId>
-			<!-- tomcat范围改成provided，否则后面就会出问题，tomcat无法解析jsp -->
+			<!-- 当是war包部署方式 tomcat范围改成provided，否则后面就会出问题，tomcat无法解析jsp -->
 			<scope>provided</scope>
 		</dependency>
 
