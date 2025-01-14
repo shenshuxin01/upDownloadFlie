@@ -36,7 +36,7 @@ public class BeanInitializationTimeLogger implements BeanPostProcessor, CommandL
                 return v;
             });
 
-            log.info("Bean '{}' initialized in {} ms", beanName, c);
+            log.debug("Bean '{}' initialized in {} ms", beanName, c);
         }
         return bean;
     }
@@ -44,7 +44,7 @@ public class BeanInitializationTimeLogger implements BeanPostProcessor, CommandL
     @Override
     public void run(String... args) {
         map.forEach((k, v) -> {
-            log.info("Bean initialization time: {} ms,size:{}, list:{}", k,v.size(), v);
+            log.debug("Bean initialization time: {} ms,size:{}, list:{}", k,v.size(), v);
         });
     }
 }
