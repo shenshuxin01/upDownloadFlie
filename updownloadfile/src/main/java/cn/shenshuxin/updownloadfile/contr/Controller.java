@@ -1,6 +1,8 @@
 package cn.shenshuxin.updownloadfile.contr;
 
 import cn.shenshuxin.updownloadfile.config.MyAutowired;
+import cn.shenshuxin.updownloadfile.mybatismapper.MapperA;
+import jakarta.servlet.http.HttpServletRequest;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -32,5 +34,14 @@ public class Controller {
     public String test(){
         Class<? extends MyAutowired> aClass = myAutowired.getClass();
         return "test";
+    }
+
+    @Autowired
+    MapperA mapperA;
+
+    @GetMapping("/mybatis")
+    public String mybatis(@RequestParam(defaultValue = "defV") String some, HttpServletRequest request) {
+        String r = mapperA.querySomeThingForTest(some);
+        return r;
     }
 }
