@@ -29,13 +29,13 @@ public class MyAutowired implements InitializingBean,ApplicationContextAware{
     public void afterPropertiesSet() throws Exception {
         System.out.println("init");
     }
-
+   public   Environment environment;
     /**
      * 实例化bean的时候调用这个方法
      */
     @Override
     public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
-        Environment environment = applicationContext.getEnvironment();
+        environment = applicationContext.getEnvironment();
 //        Object xxx = applicationContext.getBean("xxx");
 //        System.out.println("获取到的env和xxx"+environment+xxx);
     }

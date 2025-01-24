@@ -10,4 +10,6 @@ public interface MapperA {
     @Select("select concat('123_', #{some})")
     String querySomeThingForTest(@Param("some") String some);
 
+    String selectBlog(@Param("some") String some);
+
 }
